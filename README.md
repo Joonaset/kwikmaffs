@@ -6,6 +6,6 @@ This repository is collection of scripts and tools for mathematical purposes. Fo
 
 ## lettercount.py
 
-Counts lowercase alphabetic characters and their frequency in given text. Usage exapmle:
+Counts lowercase alphabetic characters and their frequency in given text. Usage example:
 
 `lettercount.py example.txt`

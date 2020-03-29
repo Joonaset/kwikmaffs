@@ -14,6 +14,6 @@ Counts lowercase alphabetic characters and their frequency in given text. Usage 
 
 Encrypt or decrypt text by vignere algorithm. works only on lowercase a-z characters. Usage example:
 
-` vignere.py -d -i inputfile -k keytext`
+` vignere.py d  inputfile keyfile`
 
-`vignere.py -e -i "input text" -k keyfile.txt`
+`vignere.py e input key`

@@ -17,8 +17,8 @@ def lettercount(input_text):
 
 def main():
     if len(sys.argv) < 2:
-        text = """"xultpaajcxitltlxaarpjhtiwtgxktghidhipxciwtvgtpilpit
-        ghlxiwiwtxgqadds."""
+        print("Not enough arguments")
+
     else:
         try:
             f = open(sys.argv[1])

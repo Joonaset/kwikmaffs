@@ -1,8 +1,9 @@
 from string import ascii_lowercase
-import sys
+import argparse
 
 def lettercount(input_text):
     """Return the amount of all alphabetical characters in text"""
+    input_text = input_text.lower()
     input_text = "".join(input_text.split()) # remove whitespace
     total = len(input_text)
     result = 'total: ' + str(total) + '\n' # result string to be constructed
@@ -12,23 +13,23 @@ def lettercount(input_text):
             if letter == c:
                 count = count + 1
         percentage = '{0:.2f}'.format(count / total * 100)
-        result = result + str(c) + " " + str(count) + " \t"+ percentage + "%" + "\n"
+        result = result + str(c.upper()) + " " + str(count) + " \t"+ percentage + "%" + "\n"
     print(result)
 
-def main():
-    if len(sys.argv) < 2:
-        print("Not enough arguments")
+parser = argparse.ArgumentParser(description='Count letter frequencies')
+parser.add_argument('input', help='input text or file')
 
-    else:
-        try:
-            f = open(sys.argv[1])
-            text = f.read()
-        except:
-            text = sys.argv[1]
+args = parser.parse_args()
+
+def main():
+    try:
+        inputfile = open(args.input[0])
+        text = inputfile.read()
+        inputfile.close()
+    except IOError:
+        text = args.input
     print(text)
     lettercount(text)
-    f.close()
 
 
 main()
-

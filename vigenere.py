@@ -1,9 +1,18 @@
 from string import ascii_lowercase
+import re
 import argparse
 
+exp = re.compile("[a-z]")
+
 def decrypt(inputtext, key):
-    inputtext = "".join(inputtext.split())
-    key = "".join(key.split())
+    print("INPUT: ", inputtext)
+    print("KEY: ", key)
+    inputtext = inputtext.lower()
+    inputtext = exp.findall(inputtext)
+    inputtext = "".join(inputtext)
+    key = key.lower()
+    key = exp.findall(key)
+    key = "".join(key)
     result = ''
     for i in range(len(inputtext)):
         inchar = inputtext[i]
@@ -13,11 +22,17 @@ def decrypt(inputtext, key):
         result = result + decrypted
     print(result)
 
-#decrypt("bsasppkkuosp", "rsidpydkawoa")
+#decrypt("bsasppkkuosp", "rsidpydkawoa") # debug purposes, should result in "kaspar hausep"
 
 def encrypt(inputtext, key):
-    inputtext = "".join(inputtext.split())
-    key = "".join(key.split())
+    print("INPUT: ", inputtext)
+    print("KEY: ", key)
+    inputtext = inputtext.lower()
+    inputtext = exp.findall(inputtext)
+    inputtext = "".join(inputtext)
+    key = key.lower()
+    key = exp.findall(key)
+    key = "".join(key)
     result = ''
     for i in range(len(inputtext)):
         inchar = inputtext[i]
@@ -52,9 +67,9 @@ def main():
         key = args.key[0]
     if not args.crypt:
         print("provide -d or -e option")
-    elif args.crypt == 0:
+    elif args.crypt == "e":
         encrypt(inputtext, key)
-    else:
+    elif args.crypt == "d":
         decrypt(inputtext, key)
 
 main()

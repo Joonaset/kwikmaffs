@@ -17,3 +17,9 @@ Encrypt or decrypt text by vignere algorithm. works only on lowercase a-z charac
 ` vignere.py d  inputfile keyfile`
 
 `vignere.py e input key`
+
+## z-ring.py
+
+print sum and multiplication tables for mod _m_ operations. Usage example:
+
+`z-ring.py 7`

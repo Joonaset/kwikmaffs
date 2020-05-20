@@ -1,4 +1,4 @@
-# Kvikmaffs
+# Kwikmaffs
 
 This repository is collection of scripts and tools for mathematical purposes. For now, it will be populated with tools for cryptomathematical purposes.
 

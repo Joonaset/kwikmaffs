@@ -40,5 +40,4 @@ def main():
         end = " \\\\\n"
     sumring(args.mod, lim, end)
     multiplyring(args.mod, lim, end)
-
 main()

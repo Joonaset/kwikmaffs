@@ -1,8 +1,7 @@
+#!/bin/python
 import argparse
-import numpy as np
 
 def sumring(mod, lim, end):
-    ls = np.arange(0, mod)
     result = ''
     print("Sum table for modulo" + str(mod))
     for i in range(mod):
@@ -11,11 +10,9 @@ def sumring(mod, lim, end):
                 result += str((i+u) % mod) + end
             else:
                 result += str((i+u)%mod) + lim
-
     print(result)
 
 def multiplyring(mod, lim, end):
-    ls = np.arange(0, mod)
     result = ''
     print("Multiplication table for modulo" + str(mod))
     for i in range(mod):
